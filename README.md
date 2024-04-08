@@ -70,28 +70,4 @@ Refer to the `notebooks/` and `src/` directories for implementation details.
 
 ## Contact
 
-Drop me a line at ## Modeling Approach
-
-The basic modeling approach is:
-1. Preprocess and clean the text data 
-2. Extract relevant features from the prompt-response pairs
-3. Train a supervised model to predict the original prompt from the response
-4. Evaluate model performance on a holdout test set
-5. Generate predictions for the Kaggle test set and submit
-
-Refer to the `notebooks/` and `src/` directories for implementation details.
-
-## Results
-
-
-## References
-
-
-## License
-
-
-## Contact
-
-## Contact
-
 Drop me a line at [m@ysfi.me](mailto:m@ysfi.me?subject=Kaggle%20LLM%20Prompt%20Recovery%20REPO|)
