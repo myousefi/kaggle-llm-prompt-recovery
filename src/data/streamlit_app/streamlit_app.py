@@ -18,7 +18,7 @@ def load_model_and_tokenizer(model_id):
     )
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     model = AutoModelForCausalLM.from_pretrained(
-        model_id, quantization_config=bnb_config
+        model_id, quantization_config=bnb_config, device_map="auto"
     )
     return tokenizer, model
 
@@ -58,7 +58,7 @@ with col2:
         inputs = tokenizer(prompt, return_tensors="pt").to("cuda:0")
         outputs = model.generate(
             **inputs,
-            max_new_tokens=len(inputs),
+            max_new_tokens=len(inputs.input_ids[0])*2,
             do_sample=False,
         )
         rewritten_text = tokenizer.decode(

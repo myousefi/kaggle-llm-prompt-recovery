@@ -146,9 +146,10 @@ def display_clicked_data(clickData, figure, rows):
             ]
         else:
             table_data = rows  # Keep the existing data if we don't have two points yet
+    else:
+        table_data = rows  # Use the existing data if there is no clickData
 
-        return table_data
-    return rows
+    return [table_data]  # Always return a list with a single element
 
 
 import socket
@@ -166,4 +167,4 @@ def find_free_port():
 # %%
 if __name__ == "__main__":
     port = find_free_port()
-    app.run_server(debug=True, port=port)
+    app.run_server(debug=False, port=port)
